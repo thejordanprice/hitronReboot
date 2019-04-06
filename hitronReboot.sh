@@ -27,6 +27,8 @@ if [ -n "$login_ret" ] ; then
     # If the response from the reboot command is 200, everything is good.
     if [ "$reboot_ret" == "HTTP/1.1 200 OK" ] ; then
         echo "Reboot success.";
+        # Exit with true.
+        exit 1;
     else
         # Error on anything that isn't a 200.
         echo "Reboot failed: $reboot_ret";
@@ -36,5 +38,5 @@ else
     echo "Failed to login.";
 fi
 
-# Always exit.
-exit 1;
+# Exit with false.
+exit 0;
