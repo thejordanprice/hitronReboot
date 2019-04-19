@@ -6,10 +6,13 @@
 # Software: 2.0.10.39-SIP
 # Hardware: CODA-4589 (1A)
 
+# Parent working directory hack if called from root in /;
+dir="$(dirname $(readlink -f $0))";
+
 # Options
-modem_ip="$(cat `$pwd`/config/modem_ip.txt)";
-username="$(cat `$pwd`/config/username.txt)";
-password="$(cat `$pwd`/config/password.txt)";
+modem_ip="$(cat $dir/config/modem_ip.txt)";
+username="$(cat $dir/config/username.txt)";
+password="$(cat $dir/config/password.txt)";
 
 # Login with credentials, then find userid for cookie in next step.
 login_ret=$(curl -s -i -d "user=$username" -d "pwd=$password" http://$modem_ip/goform/login | grep "userid=" | cut -f2 -d=|cut -f1 -d";");
