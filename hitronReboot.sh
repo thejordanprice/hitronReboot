@@ -7,9 +7,9 @@
 # Hardware: CODA-4589 (1A)
 
 # Options
-modem_ip="$(cat $pwd/config/modem_ip.txt)";
-username="$(cat $pwd/config/username.txt)";
-password="$(cat $pwd/config/password.txt)";
+modem_ip="$(cat `$pwd`/config/modem_ip.txt)";
+username="$(cat `$pwd`/config/username.txt)";
+password="$(cat `$pwd`/config/password.txt)";
 
 # Login with credentials, then find userid for cookie in next step.
 login_ret=$(curl -s -i -d "user=$username" -d "pwd=$password" http://$modem_ip/goform/login | grep "userid=" | cut -f2 -d=|cut -f1 -d";");
