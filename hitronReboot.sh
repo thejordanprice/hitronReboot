@@ -11,7 +11,7 @@ if [ -f "/root/env.sh" ] ; then
     source "/root/env.sh";
 fi
 
-if [ "$MODEM_PASS" != "changeme" ] ; then
+if [ "$MODEM_PASS" != "" ] ; then
     modem_ip="$MODEM_ADDY";
     username="$MODEM_USER";
     password="$MODEM_PASS";
