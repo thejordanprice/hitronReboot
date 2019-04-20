@@ -6,15 +6,15 @@
 # Software: 2.0.10.39-SIP
 # Hardware: CODA-4589 (1A)
 
-# Parent working directory hack if called from root in /;
-dir="$(dirname $(readlink -f $0))";
-
 # Possible global variable from docker. If not, load defaults.
 if [ "$MODEM_PASS" != "changeme" ] ; then
     modem_ip="$MODEM_ADDY";
     username="$MODEM_USER";
     password="$MODEM_PASS";
 else
+    # Parent working directory hack if called from root in /.
+    dir="$(dirname $(readlink -f $0))";
+    # Open our option config files.
     modem_ip="$(cat $dir/config/modem_ip.txt)";
     username="$(cat $dir/config/username.txt)";
     password="$(cat $dir/config/password.txt)";
