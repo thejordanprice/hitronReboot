@@ -7,7 +7,6 @@
 # Hardware: CODA-4589 (1A)
 
 # Possible global variable from docker. If not, load defaults.
-
 if [ -f "/root/env.sh" ] ; then
     source "/root/env.sh";
 fi
@@ -26,7 +25,7 @@ else
 fi
 
 # Login with credentials, then find userid for cookie in next step.
-login_ret=$(curl -s -i -d "user=$username" -d "pwd=$password" http://$modem_ip/goform/login | grep "userid=" | cut -f2 -d=|cut -f1 -d";");
+login_ret=$(curl -i -s -d "user=$username" -d "pwd=$password" http://$modem_ip/goform/login | grep "userid=" | cut -f2 -d=|cut -f1 -d";");
 
 if [ -n "$login_ret" ] ; then
     echo "Logged in. userid: $login_ret";
