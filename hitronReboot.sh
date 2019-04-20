@@ -8,7 +8,9 @@
 
 # Possible global variable from docker. If not, load defaults.
 
-source "/root/env.sh";
+if [ -f "/root/env.sh" ] ; then
+    source "/root/env.sh";
+fi
 
 if [ "$MODEM_PASS" != "changeme" ] ; then
     modem_ip="$MODEM_ADDY";
