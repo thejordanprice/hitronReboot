@@ -9,6 +9,18 @@ My ISP has been giving me upstream issues for a long time. They have been out to
 ![term](https://i.imgur.com/xusvjvp.png)
 *Screenshot*
 
+### Options
+
+You can set the password with two methods. You can set the usename, password, and modem ip via text files inside the ./config/ folder; or you can set a few global environment variables.
+
+###### Environment Variables
+
+```
+MODEM_ADDY=192.168.100.1
+MODEM_USER=cusadmin
+MODEM_PASS=changeme
+```
+
 ### Getting Started
 
 You need a linux flavor with jq and curl installed. Edit the scripts options (username, password, address) inside the file with an editor of your choosing. Execute the script and the modem should reboot.
