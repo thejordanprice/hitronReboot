@@ -7,6 +7,9 @@
 # Hardware: CODA-4589 (1A)
 
 # Possible global variable from docker. If not, load defaults.
+
+source "/root/env.sh";
+
 if [ "$MODEM_PASS" != "changeme" ] ; then
     modem_ip="$MODEM_ADDY";
     username="$MODEM_USER";
