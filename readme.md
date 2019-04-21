@@ -9,9 +9,9 @@ This is to set and forget an automated reboot schedule as a [cronjob](https://he
 You must set the usename, password, and modem ip via setting a few global environment variables. This is really meant to be used for a docker deployment but there is nothing wrong with going old fashioned.
 ###### Environment Variables
 ```
-MODEM_ADDY=192.168.100.1
-MODEM_USER=cusadmin
-MODEM_PASS=changeme
+MODEM_ADDY="192.168.100.1"
+MODEM_USER="cusadmin"
+MODEM_PASS="changeme"
 ```
 ### Getting Started
 You need a linux flavor with jq and curl installed. Set the options (username, password, address) with the correct info as environment variables. Execute the script and the modem should reboot.
