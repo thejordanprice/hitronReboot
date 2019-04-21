@@ -24,8 +24,8 @@ nano rebootHitron.sh
 ./rebootHitron.sh
 ```
 ### To-Do
--[ ] Working environment variables from docker.
--[ ] That should be about it.
+[ ] Working environment variables from docker.
+[ ] That should be about it.
 
 ### License
 
